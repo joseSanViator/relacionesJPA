@@ -33,6 +33,9 @@ public class MainManyToMany {
 		productosP1.add(consolaXbox);
 		productosP1.add(raton);
 		productosP1.add(portatil);
+		 
+		
+		
 		
 		productosP2.add(consolaSony);
 		productosP2.add(tarjetaNvidia);
