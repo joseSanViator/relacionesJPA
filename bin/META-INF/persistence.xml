@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="4.0.1">
+    <persistence-unit name="gestorVeterinario" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>Entidades.Persona</class>
+        <class>Entidades.Mascota</class> 
+        <properties>       
+		<property name="eclipselink.ddl-generation" value="create-tables"/> 		
+					<property name="jakarta.persistence.cj.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+					<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/veterinario"/>
+					<property name="jakarta.persistence.jdbc.user" value="root"/>
+					<property name="jakarta.persistence.jdbc.password" value="123456"/>
+		 </properties>
+    </persistence-unit>
+    <persistence-unit name="gestorPaises" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>Entidades1a1Bidireccional.Pais</class>  
+        <class>Entidades1a1Bidireccional.Bandera</class>
+        <properties>       
+		<property name="eclipselink.ddl-generation" value="create-tables"/> 		
+					<property name="jakarta.persistence.cj.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+					<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/paises"/>
+					<property name="jakarta.persistence.jdbc.user" value="root"/>
+					<property name="jakarta.persistence.jdbc.password" value="123456"/>
+		 </properties>
+    </persistence-unit>
+    <persistence-unit name="gestorGranja" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>Entidades1aMuchos.Gallina</class>
+        <class>Entidades1aMuchos.Granja</class>   
+        <properties>       
+		<property name="eclipselink.ddl-generation" value="create-tables"/> 		
+					<property name="jakarta.persistence.cj.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+					<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/granjas"/>
+					<property name="jakarta.persistence.jdbc.user" value="root"/>
+					<property name="jakarta.persistence.jdbc.password" value="123456"/>
+		 </properties>
+    </persistence-unit>
+    <persistence-unit name="gestorPedidos" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <class>EntidadesManyToMany.Pedido</class>
+        <class>EntidadesManyToMany.Producto</class>
+        <properties>       
+		<property name="eclipselink.ddl-generation" value="create-tables"/> 		
+					<property name="jakarta.persistence.cj.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+					<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pedidos"/>
+					<property name="jakarta.persistence.jdbc.user" value="root"/>
+					<property name="jakarta.persistence.jdbc.password" value="123456"/>
+		 </properties>
+    </persistence-unit>
+</persistence>
